@@ -27,6 +27,7 @@ public class ScrollingActivity extends AppCompatActivity {
     private BroadcastReceiver receiver=new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.d("ScrollingActivity","onReceive  ui thread  pId:  "+ Process.myPid()+"    tId:  "+Process.myTid());
             if (null!=intent){
                 String action=intent.getAction();
                 if (DownloadService.ACTION_BROADCAST.equals(action)){
